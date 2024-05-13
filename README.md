@@ -3,7 +3,7 @@ Python language function to convert a chess file in PGN notation to a file of FE
 
 I recently explored the idea of programmatically analyzing individual chess positions and full chess games. See https://jamesmccaffrey.wordpress.com/2024/05/02/programmatically-analyzing-chess-games-using-stockfish-with-python/. The technique I used requires all chess positions to be in FEN (Forsyth–Edwards Notation) format. But chess games are almost always stored in PGN (Portable Game Notation) format.
 
-[demo](converting_euwe_colle_from_pgn_to_fen.jpg)
+![demo](converting_euwe_colle_from_pgn_to_fen.jpg)
 <i>A screenshot of my PGN to FEN conversion tool, under development.</i>
 
 In order to do any serious programmatic chess analysis, I need the ability to programmatically convert PGN to FEN. For example, here's a basic PGN file:
