@@ -58,12 +58,17 @@ r2q1rk1/p1pN1ppp/1p1p1n2/8/2PP4/6Pb/PPQNPP1P/R3R1K1 w - - 1 13
 r2q1Nk1/p1p2ppp/1p1p1n2/8/2PP4/6Pb/PPQNPP1P/R3R1K1 b - - 0 13
 </pre>
 
+<br>
 <img src="https://github.com/jdmccaffrey/convert-pgn-to-fen/blob/main/Images/converting_euwe_colle_from_pgn_to_fen.jpg" width="800">
 <i>A screenshot of my PGN to FEN conversion tool, under development.</i>
 
+<hr>
+  
 The Wikipedia entries on PGN and FEN are quite good:
 https://en.wikipedia.org/wiki/Portable_Game_Notation
 https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
 
 The FEN format is so simple there is no specification document. The PGN specification is at:
 http://www.saremba.de/chessgml/standards/pgn/pgn-complete.htm
+
+<hr>
