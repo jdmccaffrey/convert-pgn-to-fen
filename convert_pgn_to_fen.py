@@ -1055,7 +1055,7 @@ class ChessFunctions:
       square_id == 32 or square_id == 34 or square_id == 36 or square_id == 38 or \
       square_id == 41 or square_id == 43 or square_id == 45 or square_id == 47 or \
       square_id == 48 or square_id == 50 or square_id == 52 or square_id == 54 or \
-      square_id == 59 or square_id == 59 or square_id == 61 or square_id == 63:
+      square_id == 57 or square_id == 59 or square_id == 61 or square_id == 63:
       return "w"
     else:
       return "b"
