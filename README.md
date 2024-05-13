@@ -1,8 +1,6 @@
 # convert-pgn-to-fen
 Python language function to convert a chess file in PGN notation to a file of FEN strings
 
-Programmatically Converting Chess PGN to FEN
-
 I recently explored the idea of programmatically analyzing individual chess positions and full chess games. See https://jamesmccaffrey.wordpress.com/2024/05/02/programmatically-analyzing-chess-games-using-stockfish-with-python/. The technique I used requires all chess positions to be in FEN (Forsyth–Edwards Notation) format. But chess games are almost always stored in PGN (Portable Game Notation) format.
 
 <i>A screenshot of my PGN to FEN conversion tool, under development.</i>
@@ -80,8 +78,7 @@ So I set out to write my own PGN to FEN conversion tool. I have a preliminary ve
   print("Done ")
 </pre>
 
-One of the side effects of years of experience of writing software is that it's usually possible to make a resonable estimae of how much time and effort is going to be required for a project. I knew going in this was not going to be a simple project. I mentally estimated that writing a PGN to FEN conversion tool would take approximately 80 hours of effort, and as I write this blog post, my estimate is right on track so far.
-
+One of the side effects of years of experience of writing software is that it's usually possible to make a resonable estimae of how much time and effort is going to be required for a project. I knew going in this was not going to be a simple project. I mentally estimated that writing a PGN to FEN conversion tool would take approximately 80 hours of effort, and as I write this README text, my estimate is right on track so far.
 
 The Wikipedia entries on PGN and FEN are quite good:
 https://en.wikipedia.org/wiki/Portable_Game_Notation
