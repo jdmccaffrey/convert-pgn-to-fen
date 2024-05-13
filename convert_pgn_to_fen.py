@@ -77,7 +77,7 @@ class MoveAnalysisResults:
     self.capture = False        # for 50-move counter
     self.pawn_moved = False
     self.white_kingside_castle_invalid = False
-    self.white_kingside_castle_invalid= False
+    self.white_queenside_castle_invalid= False
     self.black_kingside_castle_invalid = False
     self.black_queenside_castle_invalid = False
     self.notes = "::"           # colon-separated error messages, etc.
@@ -92,7 +92,7 @@ class MoveAnalysisResults:
     print("pawn_moved = " + str(self.pawn_moved))
 
     print("white_kingside_castle_invalid = " + str(self.white_kingside_castle_invalid))
-    print("white_queenside_castle_invalid = " + str(self.white_kingside_castle_invalid))
+    print("white_queenside_castle_invalid = " + str(self.white_queenside_castle_invalid))
     print("black_kingside_castle_invalid = " + str(self.black_kingside_castle_invalid))
     print("black_queenside_castle_invalid = " + str(self.black_queenside_castle_invalid))
     print("notes = " + self.notes)
