@@ -65,10 +65,14 @@ r2q1Nk1/p1p2ppp/1p1p1n2/8/2PP4/6Pb/PPQNPP1P/R3R1K1 b - - 0 13
 <hr>
   
 The Wikipedia entries on PGN and FEN are quite good:
+<pre>
 https://en.wikipedia.org/wiki/Portable_Game_Notation
 https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
+</pre>
 
 The FEN format is so simple there is no specification document. The PGN specification is at:
+<pre>
 http://www.saremba.de/chessgml/standards/pgn/pgn-complete.htm
+</pre>
 
 <hr>
