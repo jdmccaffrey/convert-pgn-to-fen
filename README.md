@@ -1,6 +1,8 @@
 # convert-pgn-to-fen
 Python language function to convert a chess file in PGN notation to a file of FEN strings
 
+<img src="https://github.com/jdmccaffrey/convert-pgn-to-fen/Images/converting_euwe_colle_from_pgn_to_fen.jpg" width="100">
+
 ![demo|500](/Images/converting_euwe_colle_from_pgn_to_fen.jpg)
 <i>A screenshot of my PGN to FEN conversion tool, under development.</i>
 
