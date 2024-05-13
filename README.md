@@ -1,12 +1,6 @@
 # convert-pgn-to-fen
 Python language function to convert a chess file in PGN notation to a file of FEN strings
 
-
-<img src="https://github.com/jdmccaffrey/convert-pgn-to-fen/blob/main/Images/converting_euwe_colle_from_pgn_to_fen.jpg" width="800">
-
-![demo|500](/Images/converting_euwe_colle_from_pgn_to_fen.jpg)
-<i>A screenshot of my PGN to FEN conversion tool, under development.</i>
-
 Here's a basic PGN file (saved as euwe_colle_karlsbad_1929.pgn):
 
 <pre>
@@ -63,6 +57,9 @@ r2q1rk1/p1pN1ppp/1p1p1n2/8/2PP4/6P1/PPQNPPbP/R3R1K1 b - - 0 12
 r2q1rk1/p1pN1ppp/1p1p1n2/8/2PP4/6Pb/PPQNPP1P/R3R1K1 w - - 1 13
 r2q1Nk1/p1p2ppp/1p1p1n2/8/2PP4/6Pb/PPQNPP1P/R3R1K1 b - - 0 13
 </pre>
+
+<img src="https://github.com/jdmccaffrey/convert-pgn-to-fen/blob/main/Images/converting_euwe_colle_from_pgn_to_fen.jpg" width="800">
+<i>A screenshot of my PGN to FEN conversion tool, under development.</i>
 
 The Wikipedia entries on PGN and FEN are quite good:
 https://en.wikipedia.org/wiki/Portable_Game_Notation
