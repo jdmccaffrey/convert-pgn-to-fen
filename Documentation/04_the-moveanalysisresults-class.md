@@ -2,7 +2,7 @@
 
 I realized early on that the most difficult part of converting PGN to FEN would be determining where a piece came from. From a given game state and a move like white Nxf6, in order to update the six fields of a game state, I'd need to know quite a bit of information, including which piece moved (easy), where the moved piece landed (easy), where the moved piece came from (difficult), and so on.
 
-This idea led to a design decision to implement a move_analysis(game_state, move) function where the result is all the information needed to update the current game state. So I defined a MoveAnaysisResults container class to hold the results of move_analysis() like so:
+This idea led to a design decision to implement a move_analysis(move, game_state) function where the result is all the information needed to update the current game state. So I defined a MoveAnaysisResults container class to hold the results of move_analysis() like so:
 
 <pre>
 # -------------------------------------------------------------------------------------------------
@@ -114,4 +114,7 @@ black_queenside_castle_invalid = False
 notes = :::black pawn move to 5th rank, 2-step, therefore e.p. square exists on 4th rank, no capture, no promotion:
 </pre>
 
-The MoveAnalysisResults class stores dummy values in the fields to help track down bugs during development I'm not sure if this technique is a good practice or not.
+One of the design rules of thumb illustrated by this blog post is that if a Python function returns two or three values, then using a tuple to hold the return values is usually a good choice. If a function returns four or more values, implementing a container class like MoveAnalysisResults is usually a good choice.
+
+The MoveAnalysisResults class stores dummy values in the fields to help track down bugs during development I'm not sure if this technique is a good practice or not. The technique works fine for lightweight systems but in any production system you need a relatively sophisticated error-handling architecture.
+
