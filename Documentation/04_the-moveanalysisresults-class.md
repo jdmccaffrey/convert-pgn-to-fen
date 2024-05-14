@@ -70,7 +70,7 @@ Calling move_analysis() and displaying the MoveAnalysis results class looks like
   print("\nAnalysis for b5: ")
   mar = ChessFunctions.move_analysis("b5", gs)
   mar.display()
-</pre>pre>
+</pre>
 
 The results are:
 
