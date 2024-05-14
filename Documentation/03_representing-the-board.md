@@ -24,6 +24,39 @@ Determining where a piece came from is by far the most difficult part of impleme
 
 Additionally, notice that because a board_position member array in the GameState class is just an array[64] of strings, there's a direct relationship between a board_position array and the integer representation.
 
+Here's some example code:
+
+<pre>
+  gs = GameState()  # initial position
+  gs.board_position[32] = "Q"  # square a4
+  gs.board_position[39] = "N"  # square h4
+  gs.display()
+</pre>
+
+The output is:
+
+<pre>
++---+---+---+---+---+---+---+---+
+| r | n | b | q | k | b | n | r | 8
++---+---+---+---+---+---+---+---+
+| p | p | p | p | p | p | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 5
++---+---+---+---+---+---+---+---+
+| Q |   |   |   |   |   |   | N | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P | P | P | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N | B | Q | K | B | N | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+rnbqkbnr/pppppppp/8/8/Q6N/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+</pre>
+
 As it turns out, using an integer ID for each square means you need to add some helper functions. Specifically, square_color(), square_file(), square_rank(), square_algebraic_to_int(), and square_int_to_algebraic().
 
 Examples:
@@ -119,4 +152,5 @@ Here is the code for the five helper functions:
   # -----------------------------------------------------------------------------------------------
 </span></pre>
 
-Even though the five helper functions are simple, there are a surprising number of minor design alternatives.
+Even though the five helper functions are simple, there are a surprising number of minor design alternatives. For example, the lookup variable in square_algebraic_to_int() and square_int_to_algebraic() is a Python List of int. Because the number of values (64) is fixed, I could have used a NumPy array. Or, because the two functions use the same lookup list, I could have made just one globally accessible list.
+
