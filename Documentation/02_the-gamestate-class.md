@@ -194,7 +194,7 @@ The from_fen() method calls a helper function to convert the board representatio
 
 This code is relatively simple because it's easier to expand "3" to three empty squares than vice versa.
 
-One of my design rules of thumb is that it's not a good idea to duplicate information in a class. For example, there was an urge for me to create an array of List that holds the location of each type of piece, along the linmes of:
+One of my design rules of thumb is that it's not a good idea to duplicate information in a class. For example, there was an urge for me to create an array of List that holds the location of each type of piece, along the lines of:
 
 <pre>
 . . .
@@ -203,7 +203,7 @@ for i in range(len(locations[5])): # black pawns
   print(locations[5][i])
 </pre>
 
-Duplicating information, when the information changes, such as a chess board position, is a recipe for synchronization errors. To get the locations of black pawns, the code looks like:
+Duplicating information, when the information changes, such as a chess board position, is a recipe for synchronization errors. To get the locations of black pawns, without using a data structure that hold duplicate information, the code could look like:
 
 <pre>
 . . .
@@ -213,4 +213,4 @@ for i in range(64):
     black_pawns_list.append(i)
 </pre>
 
-A beginner might think that this approach is inefficient (which it is), but the extra few millisecnds are a small price to pay for much greater simplicity.
+A beginner might think that this approach is somewhat inefficient (which it is), but the extra few milliseconds are a small price to pay for much greater simplicity.
