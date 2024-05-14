@@ -54,4 +54,64 @@ By far the most difficult field to compute is the came_from_square. For example,
 
 Notice that there's no need to compute and store something like a color_moved field because a game state object contains that information directly.
 
+Calling move_analysis() and displaying the MoveAnalysis results class looks like:
+
+<pre>
+  # first few moves of Ruy Lopez opening
+  # 1. e4 e5 2. Nf3 Nf6 3. Bb5 a6 4. Ba4 Nf6 5. O-O
+  fen_string = \
+    "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5"
+  print("\nFEN string first few moves of Ruy Lopez opening: ")
+  print(fen_string)
+  gs = GameState.from_fen(fen_string)
+  print("\nGame State = ")
+  gs.display()
+
+  print("\nAnalysis for b5: ")
+  mar = ChessFunctions.move_analysis("b5", gs)
+  mar.display()
+</pre>pre>
+
+The results are:
+
+<pre>
+FEN string first few moves of Ruy Lopez opening:
+r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5
+
+Game State =
++---+---+---+---+---+---+---+---+
+| r |   | b | q | k | b |   | r | 8
++---+---+---+---+---+---+---+---+
+|   | p | p | p |   | p | p | p | 7
++---+---+---+---+---+---+---+---+
+| p |   | n |   |   | n |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   |   |   | p |   |   |   | 5
++---+---+---+---+---+---+---+---+
+| B |   |   |   | P |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P | P |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N | B | Q |   | R | K |   | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5
+
+Analysis for b5:
+piece_moved = p
+landing_square = 25
+landing_piece = p
+came_from_square = 9
+ep_square = b6
+capture = False
+pawn_moved = True
+white_kingside_castle_invalid = False
+white_queenside_castle_invalid = False
+black_kingside_castle_invalid = False
+black_queenside_castle_invalid = False
+notes = :::black pawn move to 5th rank, 2-step, therefore e.p. square exists on 4th rank, no capture, no promotion:
+</pre>
+
 The MoveAnalysisResults class stores dummy values in the fields to help track down bugs during development I'm not sure if this technique is a good practice or not.
