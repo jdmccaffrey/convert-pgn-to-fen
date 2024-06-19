@@ -102,8 +102,8 @@ class MoveAnalysisResults:
 class ChessFunctions:
 
   # ------------------------------------------------------------------------------------------
-  # primary: file_pgn_to_file_fen(), pgn_to_fen
-  # secondary: update_game_state() calls move_analysis() calls can_reach
+  # primary: file_pgn_to_file_fen(), pgn_to_fen(), files_pgn_to_files_fen()
+  # secondary: update_game_state() calls move_analysis() calls can_reach()
   # helpers: 
   # square_algebraic_to_int(), square_int_to_algebraic(),
   # square_matches_file_hint(), square_matches_rank_hint(),
@@ -158,6 +158,19 @@ class ChessFunctions:
     for i in range(len(fen_list)):
       ofp.write(fen_list[i] + "\n")
     ofp.close()
+
+  # -----------------------------------------------------------------------------------------------
+
+  @ staticmethod
+  def files_pgn_to_files_fen(src_dir, dest_dir):
+    # scan thru directory src_dir, fetch all .pgn files, convert to .fen files, save in dest_dir
+    # assumes dest_dir exists
+    for src_file in os.listdir(src_dir):
+      if src_file.endswith(".pgn"):
+        print(src_file)
+        dest_file = src_file.replace(".pgn", ".fen")
+        ChessFunctions.file_pgn_to_file_fen(src_dir + "\\" + \
+          src_file, dest_dir + "\\" + dest_file)
 
   # -----------------------------------------------------------------------------------------------
 
@@ -1270,9 +1283,15 @@ def main():
   print("Game State from FEN string = ")
   gs.display()
 
+  # 5. convert multiple PGN files in a directory
+  src_dir = "C:\\Python\\ConvertPGNtoFEN\\MiscPGN"
+  dest_dir = "C:\\Python\\ConvertPGNtoFEN\\MiscFEN"
+  print("\nConverting all PGN files found in " + src_dir)
+  print("to FEN files at " + dest_dir + "\n")
+  ChessFunctions.files_pgn_to_files_fen(src_dir, dest_dir)
+  print("\nDone ")
+
   print("\nEnd ")
 
 if __name__ == "__main__":
-  main()
-
-    
+  main()  
