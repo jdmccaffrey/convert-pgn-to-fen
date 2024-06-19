@@ -65,7 +65,7 @@ If you think about it, an FEN string gives players all the information they need
 
 I found a nice JavaScript implementation of PGN to FEN at https://www.chess-poster.com/english/lt_pgn_to_fen/lt_pgn_fen.htm but it didn't meet my needs because 1.) you need to manually paste PGN text into a Web browser window, 2.) it's written in JavaScript, not Python, and 3.) the tool is on a personal Web site rather than someplace like GitHub and so it might/probably go away in the future.
 
-So I set out to write my own PGN to FEN conversion tool. I have a preliminary version running. The calling code looks like:
+So I set out to write my own PGN to FEN conversion tool. I have a reasonably solid version up and running. The calling code to convert a single file looks like:
 
 <pre>
   source_pgn = ".\\Data\\euwe_colle_karlsbad_1929.pgn"
@@ -75,7 +75,18 @@ So I set out to write my own PGN to FEN conversion tool. I have a preliminary ve
   print("Done ")
 </pre>
 
-One of the side effects of years of experience of writing software is that it's usually possible to make a reasonable estimate of how much time and effort is going to be required for a project. I knew going in this was not going to be a simple project. I mentally estimated that writing a PGN to FEN conversion tool would take approximately 80 hours of effort, and as I write this blog post, my estimate is right on track so far.
+Calling code to convert multiple files in a source directory looks like:
+
+<pre>
+  src_dir = "C:\\Python\\ConvertPGNtoFEN\\MiscPGN"
+  dest_dir = "C:\\Python\\ConvertPGNtoFEN\\MiscFEN"
+  print("Converting all PGN files found in " + src_dir)
+  print("to FEN files at " + dest_dir + "\n")
+  ChessFunctions.files_pgn_to_files_fen(src_dir, dest_dir)
+  print("Done ")
+</pre>
+
+One of the side effects of years of experience of writing software is that it's usually possible to make a reasonable estimate of how much time and effort is going to be required for a project. I knew going in this was not going to be a simple project. I mentally estimated that writing a PGN to FEN conversion tool would take approximately 80-100 hours of effort, and my estimate was right on track.
 
 The Wikipedia entries on PGN and FEN are quite good:
 https://en.wikipedia.org/wiki/Portable_Game_Notation
