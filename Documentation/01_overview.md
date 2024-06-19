@@ -1,6 +1,6 @@
 <b>Programmatically Converting Chess PGN to FEN - Overview</b>
 
-I recently explored the idea of programmatically analyzing individual chess positions and full chess games. See https://jamesmccaffrey.wordpress.com/2024/05/02/programmatically-analyzing-chess-games-using-stockfish-with-python/. The technique I used requires all chess positions to be in FEN (Forsyth–Edwards Notation) format. But chess games are almost always stored in PGN (Portable Game Notation) format.
+It's possible to programmatically analyze individual chess positions and full chess games. For example, see https://jamesmccaffrey.wordpress.com/2024/05/02/programmatically-analyzing-chess-games-using-stockfish-with-python/. The technique I used requires all chess positions to be in FEN (Forsyth–Edwards Notation) format. But chess games are almost always stored in PGN (Portable Game Notation) format.
 
 In order to do any serious programmatic chess analysis, I need the ability to programmatically convert PGN to FEN. For example, here's a basic PGN file:
 
@@ -53,7 +53,7 @@ r2q1Nk1/p1p2ppp/1p1p1n2/8/2PP4/6Pb/PPQNPP1P/R3R1K1 b - - 0 13
 
 Each line of the FEN corresponds to one position/state of the chess game. The first line is the initial position. Lower case letters are black pieces, upper case letters are white pieces. An integer indicates consecutive empty squares on the board. Each board rank is separated by the "/" character.
 
-Each FEN  line has exactly 6 comma-separated fields. The first is the board position. The second is the color of the player ('w" or "b") to move next. The third field, like "KQkq" is a code for castling privileges. A "K" means white has not lost the privilege to castle kingside (for example, if the white king has moved, or already castled to either side). The letter code does not mean that white can castle in the position, it just means that white has not lost kingside castling privileges. The other letters are for white queenside, black kingside, and black queenside privileges.
+Each FEN line has exactly 6 comma-separated fields. The first is the board position. The second is the color of the player ('w" or "b") to move next. The third field, like "KQkq" is a code for castling privileges. A "K" means white has not lost the privilege to castle kingside (for example, if the white king has moved, or already castled to either side). The letter code does not mean that white can castle in the position, it just means that white has not lost kingside castling privileges. The other letters are for white queenside, black kingside, and black queenside privileges.
 
 The fourth field, usually a "-", is a potential en passant capture square. This occurs only when the last move was a two-square pawn move to the fourth rank by white, or a two-square pawn move by black to the fifth rank. For example, if the last move was e4 (from e2) by white then the e3 square is a potential en passant capture square. If the last move was b5 (from b7) by black, the b6 square is a possible e.p. capture square. The code does not check if an e.p. capture is possible. Notice that all possible e.p. capture squares will end with "3" or "6".
 
